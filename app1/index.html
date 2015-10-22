@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App 1</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="//cdn.auth0.com/styleguide/latest/lib/logos/img/favicon.png" rel="shortcut icon">
+
+    <style>body { padding: 20px; }</style>
+  </head>
+
+  <body>
+    <h1>App 1</h1>
+    Tracker ID: <code id="tracker-id"></code>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://auth0-anonymous-tracker.herokuapp.com/tracker.js"></script>
+    <!-- <script src="http://localhost:5000/tracker.js"></script> -->
+    <script>
+      $(function () {
+        getTracker(function (err, tracker) {
+          $('#tracker-id').text(tracker.id);
+        });
+      });
+    </script>
+  </body>
+</html>
